@@ -1,17 +1,18 @@
 const inputElement = document.getElementById('numberIn');
+const buttonValidation = document.getElementById('validate')
 
     // Add event listener for the "input" event
-    inputElement.addEventListener('input', function(event) {
+    buttonValidation.addEventListener('click', function(event) {
       // Retrieve the value of the input field after each change
-      const inputValue = event.target.value;
-      console.log('Input value:', typeof(inputValue));
+      const inputValue = inputElement.value;
+      console.log('Input value:', inputValue);
       readStaticFile(inputValue);
     });
 
 function readStaticFile(inputValue) {
     let int = +inputValue
     let file =''
-    if(!int){
+    if((!int)||(int>45)||(int<1)){
          file = './data/walmart_simple.xlsx';
     }else{
          file = './data/walmart_simple_store_N_'+inputValue+'.xlsx';
