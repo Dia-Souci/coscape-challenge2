@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <style>
+        body{
+            
+            background-color: #00000013;
+
+        }
+        .storeSelect{
+            padding: 25px 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .titleField{
+            font-size: 12px;
+        }
+        #myChart{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        #chart{
+            width: 450px;
+        }
+    </style>
+</head>
+<body>
+    <div class="storeSelect">
+        <h1 class="titleField">choose a Walmart Store Number to get the chart</h1>
+        <p>note : if the number is out of the range (1 to 45 ) you will see the overall plot of all the stores</p>
+        <input type="number" id="numberIn" required placeholder="Select store number from 1 to 45">
+    </div>
+    
+    <div id="myChart">
+        <canvas id="chart"></canvas>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.2/xlsx.full.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="./Script.js"></script>
+    </body>
+</html>
